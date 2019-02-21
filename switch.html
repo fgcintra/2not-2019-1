@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <script>
+      
+         'use strict'; // Modo chato do JS
+
+         /*
+            Peça ao usuário para informar
+            dois números e um operador matemático
+            (+, -, * ou /). Exiba, com document.write,
+            o resultado da operação.
+
+         */
+
+         let n1, n2, op;
+
+         n1 = parseFloat(prompt('Informe o primeiro número'));
+         op = prompt('Informe a operação (+, -, * ou /)');
+         n2 = parseFloat(prompt('Informe o segundo número')); 
+         
+         switch(op) {
+            case '+':
+               document.write(n1 + n2);
+               break;
+
+            case '-':
+               document.write(n1 - n2);
+               break;
+
+            case '*': // case vazio
+            case 'x': // case vazio
+            case 'X': 
+               document.write(n1 * n2);
+               break;
+
+            case '/':
+               if(n2 == 0) {
+                  alert('DIVISÃO POR ZERO NÃO PERMITIDA!');
+               }
+               else {
+                  document.write(n1 / n2);
+               }
+               break;
+
+            default:
+               alert('OPERADOR INVÁLIDO!');
+         }
+
+         
+      </script>
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+   </body>
+</html>
