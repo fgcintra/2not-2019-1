@@ -13,7 +13,31 @@
          
          'use strict'; // Modo "chato" do Javascript
 
+         let num, resultado;
+
+         // parseInt(): TENTA transformar uma string em
+         // um número inteiro. Caso não consiga, o resultado
+         // será NaN (Not a Number).
+         num = parseInt(prompt('Informe um número inteiro'));
+
+         // O operador % (módulo ou resto de divisão inteira)
+         // retorna o resto da divisão entre seus dois operandos
          
+         /*
+         if(num % 2 == 0) {
+            resultado = 'PAR';
+         }
+         else {
+            resultado = 'ÍMPAR';
+         }
+         */
+
+         // Usando o operador ternário
+         resultado = (num % 2 == 0) ? 'PAR' : 'ÍMPAR';
+
+         alert('O número informado é ' + resultado);
+
+
       </script>
    </head>
    <body>

@@ -30,6 +30,28 @@
 
          'use strict'; // Modo "chato" do Javascript
 
+         let ano, resultado;
+
+         ano = parseInt(prompt('Informe um ano'));
+
+         if(ano % 400 == 0) {
+            resultado = 'é bissexto (múltiplo de 400)';
+         }
+         else if(ano % 100 == 0) {
+            resultado = 'NÃO é bissexto (múltiplo de 100)';
+         }
+         else if (ano % 4 == 0) {
+            resultado = 'é bissexto (múltiplo de 4)';
+         }
+         else {
+            resultado = 'NÃO é bissexto (outros motivos)';
+         }
+
+         //alert(ano + ' ' + resultado);
+
+         // Usando template de string
+         alert(`${ano} ${resultado}`);
+
       </script>
    </head>
    <body>
