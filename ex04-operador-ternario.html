@@ -23,8 +23,33 @@
 
          'use strict'; // Modo chato do JS
 
+         let num1, num2, maior;
+
+         num1 = parseFloat(prompt('Informe um número:'));
+         num2 = parseFloat(prompt('Informe outro número:'));
+
+         if(num1 == num2) {
+            alert('OS DOIS NÚMEROS DEVEM SER DIFERENTES ENTRE SI');
+         }
+         else {
+            // Utilizando o operador ternário para determinar
+            // qual número é o maior
+            maior = (num1 > num2) ? num1 : num2;
+            alert(`O maior número é ${maior}.`);
+         }
+
+         let nota, resultado;
+
+         nota = parseFloat(prompt('Agora, informe sua nota (0 a 10):'));
+
+         // Utilizando o operador ternário para determinar
+         // o resultado
+         resultado = (nota >= 6) ? 'APROVADO' : 'REPROVADO';
+
+         alert(`Você foi ${resultado}.`);
          
       </script>
+
    </head>
 
    <body>
