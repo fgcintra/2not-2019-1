@@ -12,6 +12,24 @@
             de todos os números entre 1 e 1000.
          */
          
+         let soma = 0; // Importante inicializar em 0
+         
+         for(let x = 1; x <= 1000; x++) {
+            soma += x; // Igual a soma = soma + x;
+         }
+
+         document.write(`A soma é ${soma}.`);
+
+         // Traço separador
+         document.write('<hr>');
+
+         soma = 0;
+
+         for(let x = 1000; x > 0; x--) {
+            soma += x;
+         }
+
+         document.write(`A soma (cálculo decrescente) é ${soma}.`);
 
       </script>
    </head>

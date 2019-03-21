@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf8" />
+      <title>Página de Teste</title>
+      <script>
+
+         'use strict'; // Modo "chato" do Javascript
+
+         /* Loop eterno é um laço cuja condição é sempre verdadeira,
+            o que faz com que ele seja executado para sempre.
+            A forma programática de sair de um loop eterno
+            é usando a instrução break.
+
+            Deve-se evitar o uso de loops eternos na programação,
+            mas, às vezes, eles são necessários ;)
+
+            FORMAS DE DECLARAR UM LOOP ETERNO:
+            while (1 == 1) -> Muito ruim
+            while (true) -> Já melhorou o estilo
+            for(;;) -> (for vazio) Nível profissional :))
+
+         */
+
+         // Este pograma gera um número aleatório entre 1 e 100
+         // e só para quando o número aleatório for igual a 76
+
+         let aleatorio;
+         for(;;) {
+            aleatorio = Math.floor(Math.random() * 100);
+            document.write(aleatorio + '<br>');
+            if(aleatorio == 76) {
+               break; // Interrompe o loop eterno
+            }
+         }
+
+         // Traço para separar
+         document.write('<hr>');
+
+         // Fazendo a mesma coisa, só que usando do...while em
+         // vez do loop eterno
+         do {
+            aleatorio = Math.floor(Math.random() * 100);
+            document.write(aleatorio + '<br>');
+         } while(aleatorio != 76);
+         
+      </script>
+   </head>
+   <body>
+      <!-- Isto é um comentário HTML --> 
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

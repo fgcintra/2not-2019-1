@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf8" />
+      <title>Página de Teste</title>
+      <script>
+
+         'use strict'; // Modo "chato" do Javascript
+
+         // Criando um vetor com valores
+         var frutas = ['maçã', 'banana', 'pera', 'mamão'];
+         var carros = Array('Fusca', 'Brasília', 'Opala', 'Variant', 'Maverick');
+         var mistureba = [19, 'cachorro', undefined, -12.4, null, true];
+
+         // Criando vetores vazios
+         var vazio1 = [];
+         var vazio2 = Array();
+
+         // Quantos elementos há no vetor? length
+         document.write('frutas: ' + frutas.length + '<br>');
+         document.write('carros: ' + carros.length + '<br>');
+         document.write('mistureba: ' + mistureba.length + '<br>');
+         document.write('vazio1: ' + vazio1.length + '<br>');
+         document.write('vazio2: ' + vazio2.length + '<br>');
+
+         document.write('<hr>');
+
+         // Listando todos os elementos de um vetor
+         for (var i = 0; i < carros.length; ++i) {
+            document.write(carros[i] + '<br>');
+         }
+
+         // Acessando diretamente o TERCEIRO elemento de carros
+         document.write('O terceiro elemento do vetor carros é ' + carros[2] + '<br>');
+
+         // Acessando diretamente o PRIMEIRO elemento de carros
+         document.write('O primeiro elemento do vetor carros é ' + carros[0]);
+
+         document.write('<hr>');
+
+         // Listando todos os elementos na ordem inversa
+         for (var j = carros.length - 1; j >= 0; --j) {
+            document.write(carros[j] + '<br>');
+         }
+
+         document.write('<hr>');
+
+         // Acrescentando um elemento ao final do vetor: push()
+         carros.push('Fiat 147');
+         vazio1.push(7);
+
+         console.log(carros);
+         console.log(vazio1);
+
+         // Acrescentando um elemento em uma posição específica: splice()
+
+         // Novo carro na primeira posição
+         // 1º parâmetro: a posição desejada
+         // 2º parâmetro: quantos elementos queremos apagar
+         // 3º parâmetro: o que queremos que seja inserido
+         carros.splice(0, 0, 'Alpha Romeo');
+
+         // Novo carro na QUARTA posição
+         carros.splice(3, 0, 'Delorean');
+
+         console.log(carros);
+
+         document.write('<hr>');
+
+         // Retirando um elemento da última posição: pop()
+         var ultimo = carros.pop();
+         document.write('O último carro da fila ERA ' + ultimo + '<br>');
+
+         // Retirando um elemento da primeira posição: shift()
+         var primeiro = carros.shift();
+         document.write('O primeiro elemento da fila ERA ' + primeiro + '<br>');
+
+         // Acrescentando um elemento na primeira posição: unshift()
+         carros.unshift('Lamborghini');
+         document.write('O novo primeiro elemento da fila é ' + carros[0] + '<br>');
+
+         document.write('<hr>');
+
+         // Procurando a posição de um elemento dentro do vetor: indexOf()
+         document.write('A posição do Fusca na fila é ' + carros.indexOf('Fusca') + '<br>');
+         document.write('A posição do Lamborghini na fila é ' + carros.indexOf('Lamborghini') + '<br>');
+         document.write('A posição da Ferrari na fila é ' + carros.indexOf('Ferrari') + ' (não tem)<br>');
+
+         console.log('Estado final da fila de carros:');
+         console.log(carros);         
+
+      </script>
+   </head>
+   <body>
+      <!-- Isto é um comentário HTML --> 
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
