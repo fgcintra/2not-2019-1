@@ -8,13 +8,13 @@
          'use strict'; // Modo "chato" do Javascript
 
          // Criando um vetor com valores
-         var frutas = ['maçã', 'banana', 'pera', 'mamão'];
-         var carros = Array('Fusca', 'Brasília', 'Opala', 'Variant', 'Maverick');
-         var mistureba = [19, 'cachorro', undefined, -12.4, null, true];
+         let frutas = ['maçã', 'banana', 'pera', 'mamão'];
+         let carros = Array('Fusca', 'Brasília', 'Opala', 'Variant', 'Maverick');
+         let mistureba = [19, 'cachorro', undefined, -12.4, null, true];
 
          // Criando vetores vazios
-         var vazio1 = [];
-         var vazio2 = Array();
+         let vazio1 = [];
+         let vazio2 = Array();
 
          // Quantos elementos há no vetor? length
          document.write('frutas: ' + frutas.length + '<br>');
@@ -26,7 +26,7 @@
          document.write('<hr>');
 
          // Listando todos os elementos de um vetor
-         for (var i = 0; i < carros.length; ++i) {
+         for (let i = 0; i < carros.length; ++i) {
             document.write(carros[i] + '<br>');
          }
 
@@ -39,7 +39,7 @@
          document.write('<hr>');
 
          // Listando todos os elementos na ordem inversa
-         for (var j = carros.length - 1; j >= 0; --j) {
+         for (let j = carros.length - 1; j >= 0; --j) {
             document.write(carros[j] + '<br>');
          }
 
@@ -68,11 +68,11 @@
          document.write('<hr>');
 
          // Retirando um elemento da última posição: pop()
-         var ultimo = carros.pop();
+         let ultimo = carros.pop();
          document.write('O último carro da fila ERA ' + ultimo + '<br>');
 
          // Retirando um elemento da primeira posição: shift()
-         var primeiro = carros.shift();
+         let primeiro = carros.shift();
          document.write('O primeiro elemento da fila ERA ' + primeiro + '<br>');
 
          // Acrescentando um elemento na primeira posição: unshift()
