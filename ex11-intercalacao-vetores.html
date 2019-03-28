@@ -21,6 +21,58 @@
 
          */
 
+         let vetor = [];
+         let num;
+
+         for(;;) {  // Loop eterno
+
+            // Este loop repete a pergunta ao usuário até ele
+            // informar um número válido
+            do{
+               num = parseInt(prompt('Informe um número'));
+            } while(isNaN(num));
+
+            // Saída do loop eterno
+            if(num == 0) {
+               break; // Termina de inserir no vetor
+            }
+
+            // Se o vetor *ainda* estiver vazio
+            if(vetor.length == 0) {
+               vetor.push(num); // Insere no final
+            }
+            else {
+                              
+               // O i será verificado depois do for. Por isso,
+               // ele não pode ser declarado dentro do for
+               let i;  
+               
+               // Percurso do vetor
+               for(i = 0; i < vetor.length; i++) {
+                  // Se o número que estiver entrando (num)
+                  // for menor que o número já existente (vetor[i]),
+                  // num deve ser inserido no lugar de vetor[i],
+                  // empurrando-o para a frente
+                  if(num < vetor[i]) {
+                     vetor.splice(i, 0, num);
+                     break;
+                  }
+               }
+
+               // Se percorreu todo o vetor e não inseriu,
+               // então insere no final do vetor
+               if(i == vetor.length) {
+                  vetor.push(num);
+               }
+            }
+
+         }
+
+         // Exibição do vetor, um elemento por linha
+         for(let i = 0; i < vetor.length; i++) {
+            document.write(vetor[i] + '<br>');
+         }
+
       </script>
    </head>
    <body>

@@ -55,7 +55,71 @@
 
          */
 
+         // Instruções 1)
+
+         // Vetor vazio
+         let linha1 = []; // Ou: let linha1 = Array();
+         linha1.push('Santa Teresinha');
+         linha1.push('Estação');
+         linha1.push('Centro');
+         linha1.push('Jardim Lima');
+         linha1.push('Aeroporto I');
+
+         // Usando um push só
+         // linha1.push('Santa Teresinha', 'Estação', 'Centro', 'Jardim Lima', 'Aeroporto I');
+
+         for(let i = 0; i < linha1.length; i++) {
+            document.write(linha1[i] + '<br>');
+         }
+         document.write('<hr>'); // Traço
+
+         // Instruções 2)
+
+         linha1.unshift('City Petrópolis'); // No início do vetor
+         linha1.push('Aeroporto IV'); // No final do vetor
+
+         for(let i = 0; i < linha1.length; i++) {
+            document.write(linha1[i] + '<br>');
+         }
+         document.write('<hr>'); // Traço
+
+         // Instruções 3)
          
+         // indexOf(): retorna a posição do elemento informado
+         // ou -1 caso não encontre
+         linha1.splice(linha1.indexOf('Estação'), 0, 'Vila Imperador');
+         linha1.splice(linha1.indexOf('Aeroporto I'), 0, 'Jardim Alvorada');
+
+         for(let i = 0; i < linha1.length; i++) {
+            document.write(linha1[i] + '<br>');
+         }
+         document.write('<hr>'); // Traço
+
+         // Instruções 4)
+         // Exemplo de substituição com splice(): um elemento é substituído
+         // por outros dois
+         linha1.splice(linha1.indexOf('Centro'), 1, '9 de Julho', 'Champagnat');
+
+         for(let i = 0; i < linha1.length; i++) {
+            document.write(linha1[i] + '<br>');
+         }
+         document.write('<hr>'); // Traço
+
+         // Instruções 5)
+
+         linha1.pop(); // Retira a última estação
+         linha1.pop(); // Retira a última estação (de novo)
+
+         // Fazendo com splice()
+         // linha1.splice(linha1.length - 2, 2);
+
+         linha1.splice(linha1.indexOf('Santa Teresinha'), 1);
+
+         for(let i = 0; i < linha1.length; i++) {
+            document.write(linha1[i] + '<br>');
+         }
+         document.write('<hr>'); // Traço
+
       </script>
    </head>
 
