@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <script>
+      
+         'use strict'; // Modo chato do JS
+
+         let dia, mes, ano, calc, resto;
+
+         do {
+            dia = parseInt(prompt('Informe o dia do seu nascimento:'));
+         } while(isNaN(dia) || dia < 1 || dia > 31);
+
+         do {
+            mes = parseInt(prompt('Informe o mês do seu nascimento:'));
+         } while(isNaN(mes) || mes < 1 || mes > 12);
+
+         do {
+            ano = parseInt(prompt('Informe o ano do seu nascimento:'));
+         } while(isNaN(ano) || ano < 1920 || ano > 2019);
+
+         calc = (dia + mes) * ano;
+
+         resto = calc % 4;
+
+         switch(resto) {
+            case 0:
+               alert('Casa Gado Demais');
+               break;
+
+            case 1:
+               alert('Casa Galo de Rinha');
+               break;
+
+            case 2:
+               alert('Casa Lacraste');
+               break;
+
+            default: // poderia ser também case 3:
+               alert('Casa Smilinguido');
+                           
+         }
+
+         
+      </script>
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+   </body>
+</html>

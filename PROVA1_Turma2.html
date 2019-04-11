@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <script>
+      
+         'use strict'; // Modo chato do JS
+
+         let signos = [], idade, signo, cupons;
+
+         signos.splice(0, 0, 'ÁRIES', 'TOURO', 'CÂNCER',
+            'GÊMEOS', 'LEÃO', 'VIRGEM', 'LIBRA',
+            'SAGITÁRIO', 'CAPRICÓRNIO', 'ESCORPIÃO',
+            'AQUÁRIO', 'PEIXES');
+
+         /* Colocando os signos um a um
+
+         signos.splice(0, 0, 'ÁRIES');
+         signos.splice(0, 0, 'TOURO'); // etc.
+
+         Nesse caso, os signos ficariam no vetor na 
+         ordem inversa da inserção
+
+         */
+
+         do {
+            idade = parseInt(prompt('Informe a sua idade:'));
+         } while(isNaN(idade) || idade < 18 || idade > 120);
+
+         do {
+            signo = prompt('Informe seu signo EM MAIÚSCULAS:');
+         } while(signos.indexOf(signo) == -1);
+
+         cupons = (idade >= 60) ? 2 : 1;
+
+         switch(signo) {
+            case 'AQUÁRIO':
+            case 'GÊMEOS':
+            case 'LIBRA':
+               document.write(`Você está concorrendo para Salvador/BA com ${cupons} cupom(ns)`);
+               break;
+
+            case 'PEIXES':
+            case 'CÂNCER':
+            case 'ESCORPIÃO':
+               document.write(`Você está concorrendo para Maceió/AL com ${cupons} cupom(ns).`);
+               break;
+
+            case 'ÁRIES': 
+            case 'LEÃO':
+            case 'SAGITÁRIO':
+               document.write(`Você está concorrendo para Natal/RN com ${cupons} cupom(ns).`);
+               break;
+
+            default:
+               document.write(`Você está concorrendo para Fortaleza/CE com ${cupons} cupom(ns).`);
+         }
+         
+      </script>
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+   </body>
+</html>
