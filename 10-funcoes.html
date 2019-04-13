@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf8" />
+   <title>Página de Teste</title>
+   <script>
+
+      'use strict'; // Modo "chato" do Javascript
+
+      /*
+
+         Uma função é um trecho de código (sub-rotina) que, uma vez escrito,
+         pode ser executado várias vezes, a partir de uma CHAMADA ao NOME da
+         função.
+
+         Uma função pode:
+         1) Receber um ou mais valores de entrada (chamados parâmetros ou argumentos)
+         2) Retornar um único valor de saída ou nenhum valor. Caso seja necessário
+            retornar mais de um valor, pode-se colocá-los dentro de um vetor
+
+         APENAS FUNÇÕES QUE RETORNAM VALOR PODEM SER ATRIBUÍDAS A VARIÁVEIS
+         OU UTILIZADAS EM ARGUMENTOS PARA OUTRAS FUNÇÕES.
+
+      */
+
+      /* FUNÇÃO QUE NÃO RECEBE PARÂMETROS NEM RETORNA VALOR */
+
+      // A chamada pode vir ANTES da declaração da função
+      mensagemErro(); // Mesmo sem argumentos, os parênteses SÃO OBRIGATÓRIOS
+
+      function mensagemErro() { // Mesmo sem argumentos, os parênteses SÃO OBRIGATÓRIOS
+         alert('ERRO! Algo deu errado. Tente novamente.');
+      }
+
+      /* FUNÇÃO QUE RECEBE DOIS ARGUMENTOS E RETORNA A SOMA DELES */
+      // O retorno de valor é caracterizado pelo uso da palavra reservada return
+      function soma(n1, n2) { // Declaração da função
+         return n1 + n2;
+      }
+
+      // Chamadas da função
+      let resultado = soma(23, 12); // resultado receberá 35
+      alert(soma(10, 30));  // 40
+      alert(soma(5, 4));    // 9
+      alert(soma(18, 31));  // 49
+
+      /* FUNÇÃO QUE RECEBE DOIS ARGUMENTOS E NÃO RETORNA VALOR ALGUM */
+      function repete(texto, vezes) { // Declaração da função
+         for (let i = 1; i <= vezes; i++) {
+            document.write(texto);
+         }
+      }
+
+      // Chamadas da função
+      repete('*', 10);
+      repete('-', 15);
+      // A função repete() não retorna valor (não tem return),
+      // por isso, não pode ser atribuída a uma variável
+      // let rep = repete('X', 12); // Não dá certo
+
+      /* FUNÇÃO QUE RECEBE PARÂMETRO OPCIONAL */
+      // Caso haja parâmetros opcionais e não opcionais, aqueles devem vir ao final
+      function calc(n1, n2, op = '+') {
+         // O parâmetro op é opcional. Se não for informado na chamada da função,
+         // será assumido o valor '+'
+         switch(op) {
+            case '+':
+               return n1 + n2;
+               break;
+            case '-':
+               return n1 - n2;
+               break;
+            case '*':
+               return n1 * n2;
+               break;
+            case '/':
+               return n1 / n2;
+               break;
+            default:
+               return NaN;
+         }
+      }
+
+      let result;
+      result = calc(12, 20, '*'); // result conterá o resultado da multiplicação
+      result = calc(23, 7, '-');  // result conterá o resultado da subtração
+      result = calc(33, 89, '+'); // result conterá o resultado da soma
+      result = calc(77, 54);      // result também conterá o resultado da soma
+
+      /* FUNÇÃO COM PARÂMETROS DE RESTO */
+      // Os parâmetros de resto permitem que um número arbitrário de parâmetros
+      // seja passado à função. Esses parâmetros são capturados no chamado 
+      // ARGUMENTO DE RESTO, que é precedido por três pontos. O argumento de resto
+      // se comporta como um vetor
+      function soma(...nums) {
+         let res = 0;
+         for(let i = 0; i < nums.length; i++) {
+            res += nums[i];
+         }
+         return res;
+      }      
+
+      // Chamadas da função
+      alert(soma(2, 44, 33, 90));
+      alert(soma(-7, 8, 12));
+
+      // IMPORTANTE: caso existam argumentos normais e argumentos de resto em uma função,
+      // este deve vir por último.
+      // Exemplos:
+      // function calculo(op, ...nums) {...} // Perfeito
+      // function calculo(...nums, op) {...} // Não funciona
+
+   </script>
+</head>
+
+<body>
+   <!-- Isto é um comentário HTML -->
+   <h1>Título da página</h1>
+   <p>Isto é um parágrafo.</p>
+</body>
+
+</html>
