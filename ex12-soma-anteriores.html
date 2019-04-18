@@ -18,6 +18,27 @@
 
          */
 
+         let num;
+
+         do {
+            num = parseInt(prompt('Informe um número maior que 1:'));
+         } while(isNaN(num) || num <= 1);
+
+         // Definição da função
+         function soma1Ate(limite) {
+            let soma = 0;
+            for(let i = 1; i <= limite; i++) {
+               soma += i;
+            }
+            return soma;
+         }
+
+         // Chamada da função com valor de retorno
+         // (atribuição a variável)
+         let soma = soma1Ate(num);
+
+         alert(`A soma de 1 até ${num} é ${soma}.`);
+
       </script>
    </head>
    <body>
