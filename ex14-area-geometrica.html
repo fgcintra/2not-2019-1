@@ -25,6 +25,33 @@
 
          */
 
+         function area(base, altura, numLados = 4) {
+            // O parâmetro numLados não precisa ser passado
+            // na chamada da função. Nese caso, seu valor
+            // será entendido sempre como 4.
+
+            switch(numLados) {
+               case 3:
+                  return base * altura / 2;
+                  break;
+
+               case 4:
+                  return base * altura;
+                  break;
+
+               default: // Número de lados inválido
+                  return undefined;
+            }
+
+         }
+ 
+         document.write(`Terreno retangular (sem passar o número de lados) de 50m x 70m. Área = ${area(50, 70)}<br>`);
+
+         document.write(`Terreno triangular de 140m x 85m. Área = ${area(50, 70, 3)}<br>`);
+
+         document.write(`Terreno retangular de 12,5m x 21m. Área = ${area(12.5, 21, 4)}<br>`);
+
+         document.write(`Terreno 5 lados especificados de 30m x 90m. Área = ${area(30, 90, 5)}<br>`);
          
       </script>
    </head>

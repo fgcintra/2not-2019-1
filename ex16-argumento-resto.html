@@ -22,6 +22,39 @@
 
          */
 
+
+         // Chamadas de função ANTES da definição da função
+         document.write(calculo(true, 1, 2, 3, 4, 5) + '<br>');
+         document.write(calculo(false, 1, 2, 3, 4, 5, 6, 7) + '<br>');         
+
+         function calculo(multiplicar, ...resto) {
+
+            console.log(resto);
+
+            let resultado;
+            if(multiplicar) {
+               resultado = 1;
+               /* for(let i = 0; i < resto.length; i++) {
+                  resultado *= resto[i];
+               } */
+               
+               // Percurso de vetor de ponta a ponta
+               for(let num of resto) {
+                  resultado *= num;
+               }
+            }
+            else {  // Somar
+               resultado = 0;
+               /* for(let i = 0; i < resto.length; i++) {
+                  resultado += resto[i];
+               } */
+               for(let x of resto) {
+                  resultado += x;
+               }
+            }
+            return resultado;
+
+         }
          
       </script>
    </head>

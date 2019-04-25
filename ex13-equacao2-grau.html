@@ -19,6 +19,38 @@
              
          */
 
+         function eq2grau(a, b, c) {
+
+            // const é utilizado quando o valor atribuído
+            // à constante não será mais modificado
+            const delta = (b ** 2) - (4 * a * c);
+
+            // Outra forma de fazer a exponenciação
+            // const delta = Math.pow(b, 2) - (4 * a * c); // Forma antiga
+
+            console.log('delta = ' + delta);
+
+            if(delta < 0) {
+               // Não temos solução domínio dos números reais
+               return []; // Vetor vazio para representar que não há solução
+            }
+            else if (delta == 0) {
+               // Há uma solução possível
+               const raiz = -b / (2 * a);
+               return [raiz]; // Vetor com um elemento
+            }
+            else { // delta > 0
+               // Duas raízes possíveis
+               const raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+               const raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+               return [raiz1, raiz2]; // Vetor com dois elementos
+            }
+
+         }
+
+         console.log(eq2grau(8, -26, -45)); // 9/2 (4.5), -5/4 (-1.25)
+         console.log(eq2grau(4, -3, 1)); // Sem solução (delta > 0)
+         console.log(eq2grau(2, 4, 2)); // -1 (delta = 0)
          
       </script>
    </head>
