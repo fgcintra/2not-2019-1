@@ -16,7 +16,25 @@
 
             Tente chamar a expressão de função ANTES e DEPOIS de
             declará-la. Em que situação a chamada funciona?
-         */         
+         */
+
+         // Tentativa de chamada de função ANTES da declaração da constante
+         alert(comparar(9, 6)); // NÃO DÁ CERTO
+
+         const comparar = function(n1, n2) {
+            if(n1 > n2) {
+               return -1;
+            }
+            else if(n1 == n2) {
+               return 0;
+            }
+            else {  // n1 < n2
+               return 1;
+            }
+         }   
+
+         // Tentativa de chamada de função DEPOIS da declaração da constante
+         alert(comparar(-4, 2));      
          
       </script>
    </head>

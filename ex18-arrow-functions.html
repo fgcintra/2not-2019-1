@@ -24,7 +24,68 @@
 
          */
 
-         
+         // Arrow function 1: se resolve em apenas uma linha. Não precisa
+         // de chaves nem de return
+         const menor = (n1, n2) => n1 < n2 ? n1 : n2;
+         alert(menor(8, 2));
+
+         // Arrow function 2: tem apenas um argumento, não precisa dos parênteses.
+         // Como não se resolve em apenas uma linha, mantêm-se as chaves.
+         const fatorial = n => {
+            let fat = 1;
+            for(let i = 1; i <= n; i++) {
+               fat *= i;
+            }
+            return fat;
+         }
+         alert(fatorial(5));
+
+         // Arrow function 3: não tem argumentos, os parênteses se mantém.
+         // Resolve-se em apenas uma linha, chaves dispensadas.
+         const msgErro = () => alert('ERRO: tente novamente');
+         msgErro();
+
+         // Arrow function 4: um argumento, parênteses dispensados.
+         // Não se resolve em apenas uma linha, mantêm-se as chaves.
+         const extenso = num => {
+            switch(num) {
+               case 0:
+                  return 'zero';
+                  break;
+               case 1:
+                  return 'um';
+                  break;
+               case 2:
+                  return 'dois';
+                  break;
+               case 3:
+                  return 'três';
+                  break;
+               case 4:
+                  return 'quatro';
+                  break;
+               case 5:
+                  return 'cinco';
+                  break;
+               case 6:
+                  return 'seis';
+                  break;
+               case 7:
+                  return 'sete';
+                  break;
+               case 8:
+                  return 'oito';
+                  break;
+               case 9:
+                  return 'nove';
+                  break;
+               default: // Número inválido
+                  return null;
+            }
+         }
+         alert(extenso(7));
+         alert(extenso('banana'));
+
       </script>
    </head>
 
