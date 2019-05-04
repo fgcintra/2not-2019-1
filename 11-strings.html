@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf8" />
+      <title>Página de Teste</title>
+      <script>
+
+         'use strict'; // Modo "chato" do Javascript
+
+         // Uma string pode ser delimitada por aspas simples
+         let str1 = 'O rato roeu a roupa do rei de Roma';
+
+         // Uma string pode ser delimitada também por aspas duplas
+         let str2 = "e a rainha ruim rasgou o resto";
+
+         // Strings delimitadas por acentos graves (backticks) podem
+         // exibir o valor de expressões Javascript válidas entre ${}
+         let str3 = `Confúcio disse: ${str1} ${str2}`;
+         let str4 = `2 + 2 = ${parseInt('2') + parseInt('2')}`;
+
+         console.log(str1);
+         console.log(str2);
+         console.log(str3);
+         console.log(str4);
+
+         // MÉTODOS DO OBJETO String
+         // Nem todos os métodos do objeto string estão exemplificadas aqui.
+         // Para uma referência completa, acesse:
+         // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String
+
+         // charAt(): retorna o caractere na posição passada
+         console.log('str1.charAt(4): ' + str1.charAt(4));
+         console.log('"Aeroporto".charAt(7): ' + "Aeroporto".charAt(7));
+
+         // concat(): emenda duas ou mais strings em uma terceira
+         let ditado = str1.concat(' ', str2);
+         console.log("str1.concat(' ', str2): " + ditado);
+
+         // indexOf(): retorna a primeira posição de uma substring dentro da string
+         // (ou -1, se não achar a substring)
+         console.log('str1.indexOf("roupa"): ' + str1.indexOf("roupa"));
+         console.log('str1.indexOf("camisa"): ' + str1.indexOf("camisa"));
+
+         // toUpperCase(): passa a string para maiúsculas
+         let maiusc = str1.toUpperCase();
+         console.log("str1.toUpperCase(): " + maiusc);
+         console.log("'HaCk&ad0'.toUpperCase(): " + 'HaCk&ad0'.toUpperCase());
+
+         // toLowerCase(): passa a string para minúsculas
+         let minusc = str1.toLowerCase();
+         console.log("str1.toLowerCase(): " + minusc);
+         console.log("'HaCk&ad0'.toLowerCase(): " + 'HaCk&ad0'.toLowerCase());
+
+         // repeat(): repete a string o número de vezes passado
+         console.log('"01".repeat(33): ' + "01".repeat(33));
+         console.log('"-".repeat(80): ' + "-".repeat(80));
+
+         // slice(): recorta uma parte da string, gerando outra. É necessário
+         // passar as posições de início e (opcionalmente) do fim do recorte
+         let substring1 = str1.slice(14, 19);
+         let substring2 = str1.slice(14);
+         console.log('str1.slice(14, 19): ' + substring1);
+         console.log('str1.slice(14); ' + substring2);
+
+         // split(): separa a string em pedaços, de acordo com o separador informado.
+         // Os pedaços gerados compõem um vetor
+         let vet1 = str1.split(' ');
+         let vet2 = str1.split('r');
+         let vet3 = str1.split(/[Rr]/); // Expressão regular
+         console.log("str1.split(' '): ");
+         console.log(vet1);
+         console.log("str1.split('r'): ");
+         console.log(vet2);
+         console.log("str1.split(/[Rr]/): ");
+         console.log(vet3);
+
+         // includes(): retorna true caso a substring exista dentro de string
+         console.log('str1: ' + str1);
+         console.log("str1.includes('roeu'): " + str1.includes('roeu'));
+         console.log("str1.includes('ruim'): " + str1.includes('ruim'));
+         // É possível especificar a partir de qual posição includes()
+         // irá efetuar a busca
+         console.log("str1.includes('roeu', 12): " + str1.includes('roeu', 12));
+
+         // trim(): tira os espaços em branco no início e no final da string;
+         let str5 = '      E viveram felizes para sempre     ';
+         console.log(`->${str5}<-`);
+         console.log(`str5.trim(): ->${str5.trim()}<-`);
+
+         // replace(): substitui uma parte de uma string (substring) por outra. Repare
+         // que, na sintaxe da função, a substring a ser substituida aparece entre barras
+         let str6 = str1.replace('roupa', 'rapadura');
+         console.log("str1.replace('roupa', 'rapadura'): " + str6);
+
+         // CARACTERES ESPECIAIS
+
+         // \n: gera uma quebra de linha (NÃO funciona com document.write())
+         console.log('Primeira linha\nSegunda linha');
+         alert('Primeira linha\nSegunda linha');
+
+         // \' e \": para usar aspas simples ou duplas dentro de strings delimitadas
+         // por elas mesmas
+         console.log('Caixa d\'água');
+         console.log("Não gosto da música \"O nome dela é Jenifer\"");
+
+         // \\: para escrever barras invertidas
+         console.log('C:\\Windows\\System32\\dxd3.dll');
+
+
+      </script>
+   </head>
+   <body>
+      <!-- Isto é um comentário HTML --> 
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>
