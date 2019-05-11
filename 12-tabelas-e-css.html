@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <script>
+      
+         'use strict'; // Modo chato do JS
+
+         let nome = 'Maria';
+         let sobrenome = 'Ferreira';
+         let idade = 44;         
+
+         document.write('<table>');
+         document.write('<tr>');
+         document.write('<th>Nome</th>');
+         document.write('<th>Sobrenome</th>');
+         document.write('<th>Idade</th>');
+         document.write('</tr>');
+         document.write('<tr>');
+         // Pode-se concatenar as variáveis...
+         document.write('<td>' + nome + '</td>');
+         // ...ou utilizar string template
+         document.write(`<td>${sobrenome}</td>`);
+         document.write(`<td class="direita">${idade}</td>`);
+         document.write('</tr>');
+         document.write('</table>');
+         
+         
+      </script>
+
+      <!-- Aqui é onde entra o CSS -->
+      <style>
+         table {
+            background: #ddd; /* Cor de fundo cinza claro */
+            /* Retira o espaçamento entre as células */
+            border-collapse: collapse; 
+         }
+
+         td, th {
+            border: 1px solid black; /* borda preta sólida */
+            /* Aumentar o espaço entre a borda e o texto */
+            padding: 10px;
+         }
+
+         /* Regras de classe começam com um ponto (.) */
+         .direita {
+            text-align: right;
+         }
+
+      </style>
+
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+
+      <table>
+         <tr> <!-- Linha de cabeçalho -->
+            <th>Marca</th> <!-- Células da linha -->
+            <th>Modelo</th>
+            <th>Preço</th>
+         </tr>
+         <tr> <!-- Linha de dados (linha "normal") -->
+            <td>Volkswagen</td>
+            <td>Fusca</td>
+            <td class="direita">$ 3500,00</td>
+         </tr>
+         <tr> <!-- Linha de dados (linha "normal") -->
+            <td>Chevrolet</td>
+            <td>Opala</td>
+            <td class="direita">$ 10500,00</td>
+         </tr>
+      </table>
+
+   </body>
+</html>
