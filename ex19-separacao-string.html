@@ -33,6 +33,69 @@
 
       */
       
+      // Passo 1)
+      let entrada = prompt('Informe uma sequência de palavras e números separados por espaços');
+      console.log(entrada);
+
+      // Passo 2)
+      let vetor = entrada.split(' '); // Divide onde há espaço em branco
+      console.log(vetor);
+
+      // Passo 3)
+      let palavras = [], numeros = [];
+
+      // Passo 4)
+      // Percorre o vetor de ponta a ponta. A cada iteração,
+      // a variável v terá o valor da posição atual no vetor
+      for(let v of vetor) {
+         if(isNaN(v)) { // Não é número, vai para o vetor de palavras
+            inserirOrd(v, palavras);
+         }
+         else {   // Números
+            // parseFloat() para garantir que será ordenado como número
+            inserirOrd(parseFloat(v), numeros);
+         }
+      }
+
+      console.log(palavras);
+      console.log(numeros);
+      
+      // Passo 5)
+      // join() junta os elementos de um vetor em uma string,
+      // coloando entre eles o separador especificado
+      let palavrasStr = palavras.join(', ');
+      let numerosStr = numeros.join(', ');
+
+      document.write(palavrasStr);
+      document.write('<br>'); // Quebra de linha
+      document.write(numerosStr);
+
+      function inserirOrd(valor, vet) {
+
+         // O i será verificado depois do for. Por isso,
+         // ele não pode ser declarado dentro do for
+         let i;  
+         
+         // Percurso do vetor
+         for(i = 0; i < vet.length; i++) {
+            // Se o valor que estiver entrando (valor)
+            // for menor que o número já existente (vet[i]),
+            // num deve ser inserido no lugar de vet[i],
+            // empurrando-o para a frente
+            if(valor < vet[i]) {
+               vet.splice(i, 0, valor);
+               break;
+            }
+         }
+
+         // Se percorreu todo o vetor e não inseriu,
+         // então insere no final do vetor
+         if(i == vet.length) {
+            vet.push(valor);
+         }
+
+      }
+
       </script>
 
    </head>

@@ -47,6 +47,35 @@
 
         */
 
+        // Parte 1)
+        
+        let entrada = prompt('Digite algumas palavras separadas por espaços');
+
+        // Parte 2)
+        let palavras = entrada.split(' ');
+
+        // Parte 4)
+        document.write('<table>'); // Início da tabela
+        document.write('<tr>'); // Início da linha de cabeçalho
+        // Células do cabeçalho
+        document.write('<th>ORIGINAL</th>');
+        document.write('<th>COMPRIMENTO</th>');
+        document.write('<th>MAIÚSCULAS</th>');
+        document.write('<th>MINÚSCULAS</th>');
+        document.write('</tr>'); // Fim da linha do cabeçalho
+
+        for(let palavra of palavras) {
+           document.write('<tr>'); // Início da linha de dados
+           // Células de dados
+           document.write(`<td>${palavra}</td>`); // ORIGINAL
+           document.write(`<td>${palavra.length}</td>`); // COMPRIMENTO
+           document.write(`<td>${palavra.toUpperCase()}</td>`); // MAIÚSCULAS
+           document.write(`<td>${palavra.toLowerCase()}</td>`); // MINÚSCULAS
+           document.write('</tr>'); // Fim da linha de dados
+        }
+
+        document.write('</table>'); // Fim da tabela
+
       </script>
 
    </head>
