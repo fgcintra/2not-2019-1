@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      let pessoa = [
+         'Feicibúquisson da Silva',
+         new Date(2011, 4, 20),
+         'M',
+         '98.756.432-1',
+         'Rua do Sobe e Desce',
+         1567,
+         null,
+         'Centrão',
+         'Morro Alto de Cima',
+         'MG',
+         '36888-000',
+         '(36) 99871-9987',
+         'feicibuquisson@gmail.com'
+      ];
+
+      // Exibir doc. identidade
+      document.write(pessoa[3] + '<br>');
+
+      // Exibir e-mail
+      document.write(`${pessoa[12]} <br>`);
+
+      let objPessoa = {
+         nome: 'Feicibúquisson da Silva',
+         dataNascimento: new Date(2011, 4, 20),
+         sexo: 'M',
+         'documento de identidade': '98.756.432-1',
+         endereco: 'Rua do Sobe e Desce',
+         numImovel: 1567,
+         complemento: null,
+         bairro: 'Centrão',
+         municipio: 'Morro Alto de Cima',
+         uf: 'MG',
+         cep: '36888-000',
+         telefone: '(36) 99871-9987',
+         email: 'feicibuquisson@gmail.com'
+      };
+
+      // Exibir doc. identidade
+      // Não é possível acessar essa propriedade com o ponto (.)
+      document.write(objPessoa['documento de identidade'] + '<br>');
+
+      // Exibir e-mail
+      document.write(`${objPessoa['email']} <br>`);
+
+      // Exibir nome
+      document.write(objPessoa.nome + '<br>');
+
+      // Exiir data de nascimento
+      document.write(`${objPessoa.dataNascimento} <br>`);
+      document.write(`${objPessoa.dataNascimento.toLocaleDateString('pt-BR')} <br>`);
+
+      let objPessoa2 = {};
+
+      objPessoa2.nome = 'Maria Tuíta de Oliveira';
+      objPessoa2.sexo = 'F';
+      objPessoa2.apelido = 'Fofoqueira';
+
+      document.write(objPessoa2);
+      console.log(objPessoa2);
+
+      //document.write(pessoa);
+
+      document.write('<hr>');
+
+      // Exibindo todas as propriedades e respectivos valores do objPessoa
+      for(let prop in objPessoa) {
+         if(objPessoa[prop] instanceof Date) {
+            document.write(`${prop}: ${objPessoa[prop].toLocaleDateString('pt-BR')} <br>`);   
+         }
+         else {
+            document.write(`${prop}: ${objPessoa[prop]} <br>`);
+         }
+         //document.write(prop + ': ' + objPessoa[prop] + '<br>');
+      }
+
+      document.write('<hr>');
+
+      // Destruindo uma propriedade
+      delete objPessoa2.apelido;
+
+      // Exibindo todas as propriedades e respectivos valores do objPessoa2
+      for (let prop in objPessoa2) {
+         if (objPessoa2[prop] instanceof Date) {
+            document.write(`${prop}: ${objPessoa2[prop].toLocaleDateString('pt-BR')} <br>`);
+         }
+         else {
+            document.write(`${prop}: ${objPessoa2[prop]} <br>`);
+         }
+         //document.write(prop + ': ' + objPessoa2[prop] + '<br>');
+      }
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
