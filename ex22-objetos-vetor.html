@@ -27,6 +27,60 @@
            - Média da idade de todos os funcionários informados
 
       */
+
+      // * Declare e inicialize um vetor vazio.
+      let pessoas = []; // Vetor vazio
+
+      // * Declare um loop eterno.
+      for(;;) {
+
+         // * Dentro do loop eterno, declare e inicialize um objeto vazio
+         let p = {};
+
+         // * Peça ao usuário para informar um nome. Se o usuário deixar 
+         // em branco o nome, interrompa o loop eterno.
+         p.nome = prompt('Informe o nome da pessoa:');
+
+         // Saída do loop
+         if(p.nome == '') {
+            break;
+         }
+
+         // Captura da idade
+         do {
+            p.idade = parseInt(prompt('Informe a idade da pessoa:'));
+         } while (isNaN(p.idade));
+
+         do {
+            p.salario = parseFloat(prompt('Informe o salário da pessoa:'));
+         } while (isNaN(p.salario));
+
+         // Inserindo o objeto p no vetor pessoas
+         pessoas.push(p);
+
+      }
+
+      let somaSalario = 0, somaIdade = 0;
+     /*  
+      // Percurso de vetor na forma clássica
+      for(let i = 0; i < pessoas.length; i++) {
+         // somaSalario = somaSalario + pessoas[i].salario;
+         somaSalario += pessoas[i].salario;
+         somaIdade += pessoas[i].idade;
+      } */
+      
+      // Percurso do vetor versão ES6+ (2015)
+      for(let pessoa of pessoas) {
+         somaSalario += pessoa.salario;
+         somaIdade += pessoa.idade;
+      }
+
+      let mediaSalario = somaSalario / pessoas.length;
+      let mediaIdade = somaIdade / pessoas.length;
+
+      document.write(`Soma dos salários: R$ ${somaSalario}<br>`);
+      document.write(`Média dos salários: R$ ${mediaSalario}<br>`);
+      document.write(`Média de idade: ${mediaIdade} (${pessoas.length} pessoas).`);
       
       </script>
 
