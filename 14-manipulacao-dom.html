@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf8" />
+      <title>Página de Teste</title>
+      
+      <style>
+         /* O que vem aqui é CSS */
+         body {
+            background: aliceblue;
+            font: normal 16pt Consolas;
+         }
+         h1 {
+            color: blue;
+         }
+         div {
+            padding: 10px; /* Espaçamento entre a borda e o texto */
+            background: lightgreen;
+         }
+         span {
+            background: yellow;
+         }
+         .centralizado {
+            text-align: center;
+         }
+         #d2 {
+            background:moccasin;
+         }
+      </style>
+            
+   </head>
+   <body>
+      <!-- Isto é um comentário HTML --> 
+      <h1 class="centralizado">Título da página</h1>
+      
+      <p>Isto é um parágrafo.</p>
+      <p id="p2">Este é o segundo parágrafo.</p>
+      <p class="centralizado">Este é o terceiro parágrafo.</p>
+      
+      <div>Esta é uma divisão. E <span>isto</span> é um span.</div>
+      <div id="d2">Esta é a segunda divisão. E <span>isto</span> é um span.</div>
+      <span>Terceiro span</span>
+      
+      <script>
+
+         'use strict'; // Modo "chato" do Javascript
+
+         // Selecionando todos os elementos do documento cuja
+         // tag seja h1 colocando dentro da variável cabec.
+         // getElementsByTagName() sempre retorna um VETOR
+         let cabec = document.getElementsByTagName('h1')[0]; // [0] = primeiro elemento
+         console.log(document.getElementsByTagName('h1'));
+         cabec.innerText = 'Aula de manipulação de DOM';
+
+         let parags = document.getElementsByTagName('p');
+
+         // Alterando o texto do primeiro parágrafo
+         parags[0].innerText = 'innerText alterado.';
+
+         // Alterando o estilo do segundo parágrafo
+         parags[1].style.color = "red";
+
+         // Passando o texto de todos os parágrafos para maiúsculas
+         for(let p of parags) {
+            p.innerText = p.innerText.toUpperCase();
+         }
+         
+         // getElementById(): retorna o elemento cujo id foi passado
+         // NÃO PODE existir mais de um elemento com o mesmo id no documento
+         let par2 = document.getElementById('p2');
+
+         par2.style.background = "white";
+
+         // getElementsByClassName() retorna todos os elementos de 
+         // uma determinada classe em um VETOR
+         let centrals = document.getElementsByClassName('centralizado');
+
+         // Coloca todos os elementos centralizados em verde
+         for(let c of centrals) {
+            c.style.color = 'green';
+         }
+
+         
+         let div2 = document.getElementById('d2');
+         
+         // Selecionando todos os elementos span que estão
+         // dentro da d2
+         let spanDiv2 = div2.getElementsByTagName('span')[0];
+         spanDiv2.style.background = "orange";
+         
+         // querySelector() retorna o PRIMEIRO elemento que
+         // coincidir com o seu parâmetro
+         let cabecalho = document.querySelector('h1');
+         cabecalho.style.color = "black";
+
+         let d2 = document.querySelector('#d2');
+         d2.style.color = "blue";
+
+         let cent = document.querySelector('.centralizado');
+         cent.innerText = 'AULA DE MANIPULAÇÃO DE DOM COM querySelector()';
+
+         let spans = document.querySelectorAll('span');
+
+         for(let s of spans) {
+            s.style.font = "normal 33pt Arial";
+         }
+
+      </script>
+   </body>
+</html>
