@@ -76,8 +76,73 @@
 
       */
 
+      // 1. Altere o texto do cabeçalho para "Tabela de preços"
+      let tituloPag = document.querySelector('#cabec'); // Opção: document.getElementById('cabec')
+      tituloPag.innerText = 'Tabela de preços';
 
+      //2. Coloque no primeiro parágrafo a quantia total necessária
+      //   (calculada em código) para comprar 1kg de cada fruta
+
+      let precos = document.querySelectorAll('.alin-dir');
+      // Alternativa:
+      // let precos = document.getElementsByClassName('alin-dir');
+
+      let total = 0;
+      for(let preco of precos) {
+         total += parseFloat(preco.innerText);
+      }
       
+      // Obtendo os dois parágrafos de uma única vez em um único vetor
+      let parags = document.getElementsByTagName('p');
+      // Alternativa:
+      // let parags = document.querySelectorAll('p');
+
+      // 1º parágrafo (índice 0)
+      parags[0].innerText = `Valor total requirido: ${total}`;
+
+      // 3. Coloque no segundo parágrafo o preço médio (calculado em 
+      // código) das frutas
+
+      // 2º parágrafo (índice 1)
+      let media = total / precos.length;
+      // toFixed(): controla a quantidade de casas decimais exibidas
+      parags[1].innerText = `Preço médio das frutas: ${media.toFixed(2)}`;
+
+      // 4. Passe o nome das frutas da primeira coluna para maiúsculas
+
+      // Selecionar a tabela
+      let tabela = document.querySelector('table');
+      // Alternativa:
+      // let tabela.getElementsByTagName('tabela')[0];
+
+      // Capturando todas as linhas da tabela
+      let linhasTab = tabela.getElementsByTagName('tr');
+      // Alternativa:
+      // let linhasTab = tabela.querySelectorAll('tr');
+
+      // for clássico pulando a primeira linha (linha de cabeçalho)
+      // (Não queremos mexer na linha 0 de cabeçalho)
+      for(let i = 1; i < linhasTab.length; i++) {
+         let linha = linhasTab[i];
+         
+         // Capturando a primeira célula da linha
+         let celula1 = linha.querySelector('td');
+         // Alternativas:
+         // let celula1 = linha.getElementsByTagName[0];
+         // let celula1 = linha.children[0];
+         // let celula1 = linha.firstChild;
+         // let celula1 = linha.cells[0]; // Só funciona para tr
+         
+         // Passando (FINALMENTE!) o texto para maiúsculas 
+         celula1.innerText = celula1.innerText.toUpperCase();
+      }
+
+      // 5. Altere a cor do cabeçalho para amarelo (yellow)
+      // tituloPag.style.color = 'yellow'; // Não fica bom
+
+      // Melhor mudar a cor do background
+      tituloPag.style.background = 'yellow';
+
    </script>
 
 
