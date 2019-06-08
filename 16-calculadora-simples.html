@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      
+   </head>
+
+   <body>
+      <input type="number" id="num1">
+      
+      <select id="op">
+         <option>(Selecione)</option>
+         <option value="+">Somar</option>
+         <option value="-">Subtrair</option>
+         <option value="*">Multiplicar</option>
+         <option value="/">Dividir</option>
+         <option value="%">Resto da divisão</option>
+         <option value="**">Potenciação</option>
+      </select>
+      
+      <input type="number" id="num2">
+      <button id="btn">Calcular</button>
+      <span id="res"></span>
+   </body>
+   <script>
+      
+      'use strict'; // Modo chato do JS
+
+      let num1 = document.querySelector('#num1');
+      let num2 = document.querySelector('#num2');
+      let btn = document.querySelector('#btn');
+      let res = document.querySelector('#res');
+      let op = document.getElementById('op');
+
+      function calcular() {
+         let resultado;
+         
+         let operando = op.options[op.selectedIndex].value;
+
+         switch(operando) {
+            case '+':
+               resultado = Number(num1.value) + Number(num2.value);
+               break;
+            case '-':
+               resultado = Number(num1.value) - Number(num2.value);
+               break;
+            case '*':
+               resultado = Number(num1.value) * Number(num2.value);
+               break;
+            case '/':
+               resultado = Number(num1.value) / Number(num2.value);
+               break;
+            case '%':
+               resultado = Number(num1.value) % Number(num2.value);
+               break;
+            case '**':
+               resultado = Number(num1.value) ** Number(num2.value);
+               break;
+            default:
+               alert('Selecione uma operação válida');
+         }
+
+         res.innerText = resultado;
+      }
+
+      btn.addEventListener('click', calcular);
+
+   </script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <style>
+         #area {
+            width: 200px;
+            height: 200px;
+            background: lightseagreen;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 200px;
+            margin: 0 auto;
+         }
+         #msg {
+            border: 1px dotted black;
+            height: 40px;
+            padding: 15px;
+            margin-top: 30px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div id="area" 
+         onmouseover="entrou()"
+         onmouseout="saiu()"
+         onclick="clicou()"
+         onmousedown="botaoPressionado()"
+         onmouseup="botaoLiberado()"
+      >
+         Clique-me
+      </div>
+      <div id="msg"></div>
+   </body>
+   <script>
+      
+      'use strict'; // Modo chato do JS
+
+      let msg = document.querySelector('#msg');
+      let area = document.querySelector('#area');
+
+      function entrou() {
+         msg.innerText = 'Entrou!';
+      }
+
+      function saiu() {
+         msg.innerText = 'Saiu!';
+      }
+
+      function clicou() {
+         msg.innerText = 'Clicou!';
+      }
+
+      function botaoPressionado() {
+         area.style.background = 'yellow';
+      }
+
+      function botaoLiberado() {
+         area.style.background = 'lightseagreen';
+      }
+
+      function clicouDuplo() {
+         msg.innerText = "Clique duplo!";
+      }
+
+      function fundoVerde() {
+         msg.style.background = 'green';
+      }
+      // Monitorando eventos diretamente via JS
+      area.addEventListener('dblclick', clicouDuplo);
+      area.addEventListener('click', fundoVerde);
+      
+   </script>
+</html>
