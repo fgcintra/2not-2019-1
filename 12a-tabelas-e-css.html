@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      
+      <!-- Aqui é onde entra o CSS -->
+      <style>
+         table {
+            background: #ddd; /* Cor de fundo cinza claro */
+            /* Retira o espaçamento entre as células */
+            border-collapse: collapse; 
+         }
+
+         td, th {
+            border: 1px solid black; /* borda preta sólida */
+            /* Aumentar o espaço entre a borda e o texto */
+            padding: 10px;
+         }
+
+         /* Regras de classe começam com um ponto (.) */
+         .direita {
+            text-align: right;
+         }
+
+      </style>
+
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+
+      <table id="carros">
+         <tr> <!-- Linha de cabeçalho -->
+            <th>Marca</th> <!-- Células da linha -->
+            <th>Modelo</th>
+            <th>Preço</th>
+         </tr>
+         <tr> <!-- Linha de dados (linha "normal") -->
+            <td>Volkswagen</td>
+            <td>Fusca</td>
+            <td class="direita">$ 3500,00</td>
+         </tr>
+         <tr> <!-- Linha de dados (linha "normal") -->
+            <td>Chevrolet</td>
+            <td>Opala</td>
+            <td class="direita">$ 10500,00</td>
+         </tr>
+      </table>
+
+   </body>
+   <script>
+      
+      'use strict'; // Modo chato do JS
+
+      let tabela = document.getElementById('carros');
+      let tbody = tabela.querySelector('tbody');
+      let linha1 = tbody.querySelector('tr');
+
+      console.log(linha1.children);
+
+      linha1.children[2].textContent = 'Valor';
+      
+      let linha2 = tabela.getElementsByTagName('tr')[1];
+
+      linha2.children[0].innerText = '(Montadora<br>desconhecida)';
+
+   </script>
+</html>
