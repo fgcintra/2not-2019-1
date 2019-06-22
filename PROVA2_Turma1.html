@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Tabela de contatos</title>
+      <style>
+         body {
+            font-family: Calibri, Arial, sans-serif;
+            background:tomato;
+            color: white;
+         }
+         h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            text-align: center;
+            font-size: 30pt;
+         }
+         div {
+            background: white;
+            width: 50%;
+            margin: 50px auto;
+            color: #444;
+            padding: 20px;
+            border-radius: 16px;
+         }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+         }
+         th, td {
+            border-bottom: 1px solid #888;
+            padding: 8px;
+            text-align: left;
+         }
+         th {
+            color: tomato;
+            font-family: Georgia, 'Times New Roman', serif;
+         }
+      </style>
+   </head>
+
+   <body>
+      <h1>Título da página</h1>
+
+      <div>
+         <table>
+            <tr>
+               <th>Nº</th>
+               <th>Nome</th>
+               <th>E-mail</th>
+               <th>Telefone</th>
+            </tr>
+            <tr>
+               <td id="lin1cel0">xxx</td>
+               <td id="lin1cel1">xxx</td>
+               <td id="lin1cel2">xxx</td>
+               <td id="lin1cel3">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin2cel0">xxx</td>
+               <td id="lin2cel1">xxx</td>
+               <td id="lin2cel2">xxx</td>
+               <td id="lin2cel3">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin3cel0">xxx</td>
+               <td id="lin3cel1">xxx</td>
+               <td id="lin3cel2">xxx</td>
+               <td id="lin3cel3">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin4cel0">xxx</td>
+               <td id="lin4cel1">xxx</td>
+               <td id="lin4cel2">xxx</td>
+               <td id="lin4cel3">xxx</td>
+            </tr>
+         </table>
+      </div>
+      
+   </body>
+   <script>
+      
+      'use strict'; // Modo chato do JS
+
+      function preencherContatos(vet) {
+         vet.push({num: 1, nome: 'Alberico Álvares', email: 'alberico@gmail.com', telefone: '(16) 9999-9999'});
+         vet.push({num: 2, nome: 'Benedita Borba', email: 'beneborba@hotmail.com', telefone: '(16) 8888-8888'});
+         vet.push({num: 3, nome: 'Clésio Camargo', email: 'cle.camargo@yahoo.com', telefone: '(16) 7777-7777'});
+         vet.push({num: 4, nome: 'Domênica Duarte', email: 'domenica@outlook.com.br', telefone: '(16) 6666-6666'});
+      }
+
+      /* --> Declare uma variável de vetor, vazia. */
+      let contatos = [];
+
+      /* --> Efetue uma chamada à função preencherContatos(), de modo que a variável de vetor que você
+         declarou anteriormente seja preenchida com dados pela função.
+      */
+      preencherContatos(contatos);
+
+      /* --> Com Javascript, utilize os dados do vetor para preencher a tabela que já está configurada 
+         na página. Ao final, a tabela preenchida deverá se parecer com a figura abaixo.
+      */
+
+      /*
+         Há várias formas de resolver essa parte da prova. A proposta a seguir utiliza um loop e,
+         dentro dele, faz referência aos ids das células.
+         Também é possível ignorar os ids e trabalhar com as células dentro de um vetor de children
+         ou cells de cada linha da tabela. Veja a resolução da PROVA2_Turma2.html.
+      */
+
+      let cel0, cel1, cel2, cel3;
+      for(let i = 0; i < contatos.length; i++) {
+         cel0 = document.getElementById(`lin${i + 1}cel0`);
+         cel1 = document.getElementById(`lin${i + 1}cel1`);
+         cel2 = document.getElementById(`lin${i + 1}cel2`);
+         cel3 = document.getElementById(`lin${i + 1}cel3`);
+
+         cel0.innerText = contatos[i].num;
+         cel1.innerText = contatos[i].nome;
+         cel2.innerText = contatos[i].email;
+         cel3.innerText = contatos[i].telefone;
+      }
+
+      /* --> Troque o texto do cabeçaho da página para “Lista de Contatos”, via Javascript. */
+      let titulo = document.querySelector('h1');
+      titulo.innerText = 'Lista de Contatos';
+
+      /* --> Usando Javascript, troque a cor de fundo da página por outra, à sua escolha. */
+      document.body.style.background = 'peru'; // Sim, 'peru' é um nome de cor válido :P
+      /* Para saber todos os nomes de cores nomeadas no CSS/HTml, consulte 
+         https://htmlcolorcodes.com/color-names/. */
+
+   </script>
+</html>

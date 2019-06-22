@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Tabela de contatos</title>
+      <style>
+         body {
+            font-family: Calibri, Arial, sans-serif;
+            background: seagreen;
+            color: white;
+         }
+         h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            text-align: center;
+            font-size: 30pt;
+         }
+         div {
+            background: white;
+            width: 50%;
+            margin: 50px auto;
+            color: #444;
+            padding: 20px;
+            border-radius: 16px;
+         }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+         }
+         th, td {
+            border-bottom: 1px solid #888;
+            padding: 8px;
+            text-align: left;
+         }
+         th {
+            color: seagreen;
+            font-family: Georgia, 'Times New Roman', serif;
+         }
+         .alin-dir {
+            text-align: right;
+         }
+      </style>
+   </head>
+
+   <body>
+      <h1>Relatório de Notas</h1>
+
+      <div>
+         <table>
+            <tr>
+               <th>Nome</th>
+               <th class="alin-dir">Nota 1</th>
+               <th class="alin-dir">Nota 2</th>
+               <th class="alin-dir">Média</th>
+               <th>Resultado</th>
+            </tr>
+            <tr>
+               <td id="lin1cel0">Alberico Álvares</td>
+               <td id="lin1cel1" class="alin-dir">2.5</td>
+               <td id="lin1cel2" class="alin-dir">5.7</td>
+               <td id="lin1cel3" class="alin-dir">xxx</td>
+               <td id="lin1cel4">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin2cel0">Benedita Borba</td>
+               <td id="lin2cel1" class="alin-dir">10.0</td>
+               <td id="lin2cel2" class="alin-dir">8.6</td>
+               <td id="lin2cel3" class="alin-dir">xxx</td>
+               <td id="lin2cel4">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin3cel0">Clésio Camargo</td>
+               <td id="lin3cel1" class="alin-dir">7.3</td>
+               <td id="lin3cel2" class="alin-dir">6.9</td>
+               <td id="lin3cel3" class="alin-dir">xxx</td>
+               <td id="lin3cel4">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin4cel0">Domênica Duarte</td>
+               <td id="lin4cel1" class="alin-dir">4.6</td>
+               <td id="lin4cel2" class="alin-dir">6.2</td>
+               <td id="lin4cel3" class="alin-dir">xxx</td>
+               <td id="lin4cel4">xxx</td>
+            </tr>
+            <tr>
+               <td id="lin5cel0">Esmeralda Evangelista</td>
+               <td id="lin5cel1" class="alin-dir">5.9</td>
+               <td id="lin5cel2" class="alin-dir">6.5</td>
+               <td id="lin5cel3" class="alin-dir">xxx</td>
+               <td id="lin5cel4">xxx</td>
+            </tr>
+         </table>
+      </div>
+      
+   </body>
+   <script>
+      
+      'use strict'; // Modo chato do JS
+
+      /* --> Escreva um função que receba dois números e retorne a média aritmética entre eles. */
+      function media (n1, n2) {
+         return (n1 + n2) / 2;
+      } 
+      
+      /* --> Escreva outra função que receba um número e retorne a string APROVADO, caso o número 
+         recebido seja maior ou igual a 6, ou a string REPROVADO, caso contrário */
+      function resultado(media) {
+         return media >= 6 ? 'APROVADO' : 'REPROVADO';
+      }
+
+      /* --> Com Javascript, capture as notas de dentro da tabela já existente no documento. 
+         Efetue chamadas às funções declaradas anteriormente para calcular a média e determinar 
+         a situação do aluno.
+      */
+
+      /*
+         Há várias formas de resolver essa parte da prova. A proposta a seguir utiliza um loop e,
+         dentro dele, trabalha as células como elementos-filhos (children) de cada lina da tabela.
+         Também é possível utilizar os ids das células, dentro do loop. Veja a resolução da 
+         PROVA2_Turma1.html.
+      */
+      let tabela = document.querySelector('table');
+      let linhas = tabela.querySelectorAll('tr');
+      let celNota1, celNota2, celMedia, celResultado, mediaFinal, result;
+      
+      for(let i = 1; i < linhas.length; i++) {
+         celNota1 = linhas[i].children[1];
+         celNota2 = linhas[i].children[2];
+         celMedia = linhas[i].children[3];
+         celResultado = linhas[i].children[4];
+
+         mediaFinal = media(parseFloat(celNota1.innerText), parseFloat(celNota2.innerText));
+         
+         result = resultado(mediaFinal);
+
+         /* --> Via Javascript, preencha as células das colunas “Média” e “Resultado” com os 
+            valores encontrados. */
+         celMedia.innerText = mediaFinal;
+         celResultado.innerText = result;
+
+         /* --> Caso o aluno seja APROVADO, essa palavra deverá aparecer na cor azul (blue); 
+            caso contrário, a palavra REPROVADO deverá aparecer em vermelho (red). */
+         if(result == 'APROVADO') {
+            celResultado.style.color = 'blue';
+         }
+         else {
+            celResultado.style.color = 'red';
+         }
+      }
+
+   </script>
+</html>
